@@ -4,8 +4,13 @@ import java.util.Arrays;
 
 import org.sonar.plugins.java.api.CheckRegistrar;
 import org.sonar.plugins.java.api.JavaCheck;
-
+import org.sonar.samples.java.checks.AvoidAnnotationRule;
+import org.sonar.samples.java.checks.AvoidBrandInMethodNamesRule;
+import org.sonar.samples.java.checks.AvoidMethodDeclarationRule;
+import org.sonar.samples.java.checks.AvoidSuperClassRule;
+import org.sonar.samples.java.checks.AvoidUnmodifiableListRule;
 import org.sonar.samples.java.checks.MyCustomSubscriptionRule;
+import org.sonar.samples.java.checks.SecurityAnnotationMandatoryRule;
 
 /**
  * Provide the "checks" (implementations of rules) classes that are gonna be executed during
@@ -29,7 +34,13 @@ public class MyJavaFileCheckRegistrar implements CheckRegistrar {
    */
   public static Class<? extends JavaCheck>[] checkClasses() {
     return new Class[] {
+      AvoidAnnotationRule.class,
+      AvoidBrandInMethodNamesRule.class,
+      AvoidMethodDeclarationRule.class,
+      AvoidSuperClassRule.class,
+      AvoidUnmodifiableListRule.class,
       MyCustomSubscriptionRule.class,
+      SecurityAnnotationMandatoryRule.class
     };
   }
 
